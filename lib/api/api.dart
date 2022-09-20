@@ -17,5 +17,5 @@ Future<List<Post>> fetchPost() async {
   }
 }
 
-//Récupération des valeurs des customsFields
+//Récupération des valeurs des customsField
   
