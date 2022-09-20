@@ -12,8 +12,7 @@ class ProfilController extends GetxController {
     super.onInit();
   }
 
-  doFetchPost() async {
+  Future<void> doFetchPost() async {
     postList.value = await fetchPost();
-    return postList;
   }
 }

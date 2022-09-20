@@ -149,7 +149,7 @@ class ProfilPage extends GetView<ProfilController> {
                                 ),
                                 Column(
                                   children: [
-                                    Text(controller.postList[index].email),
+                                    Text(controller.postList[index].text),
                                     Text("A l'instant"),
                                   ],
                                 ),
@@ -161,7 +161,7 @@ class ProfilPage extends GetView<ProfilController> {
                                     icon: Icon(Icons.more_vert))
                               ],
                             ),
-                            Text(controller.postList[index].body),
+                            Text(controller.postList[index].created_at),
                             Padding(padding: EdgeInsets.only(bottom: 30)),
                           ],
                         ),

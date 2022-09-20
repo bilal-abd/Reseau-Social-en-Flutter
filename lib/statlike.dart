@@ -10,7 +10,6 @@ class StatsLike extends StatefulWidget {
 class _StatsLikeState extends State<StatsLike> {
   var bool_loading;
   var double_progressValue;
-  final List<String> entries = <String>['Bilal', 'Alexandre', 'Chekir'];
 
   @override
   void initState() {
@@ -52,45 +51,104 @@ class _StatsLikeState extends State<StatsLike> {
             endIndent: 48,
             thickness: 1,
           ),
-          ListView.builder(
-            itemCount: entries.length,
-            itemBuilder: (context, index) {
-              return Card(
-                color: Color(0xFFE0E0E0),
-                child: Row(
-                  children: [
-                    Padding(
-                        padding: EdgeInsets.only(
-                            top: 40, left: 10, bottom: 20, right: 15)),
-                    Text(
-                      'Gautier',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-                    Spacer(),
-                    Text('15',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16)),
-                    Spacer(),
-                    Container(
-                      width: 240,
-                      height: 20,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        child: LinearProgressIndicator(
-                          backgroundColor: Color.fromARGB(255, 201, 198, 198),
-                          color: Colors.grey,
-                          value: 0.90,
-                          valueColor:
-                              AlwaysStoppedAnimation<Color>(Colors.orange),
-                        ),
-                      ),
-                    ),
-                  ],
+          Card(
+            color: Color(0xFFEEEEEE),
+            child: Row(
+              children: [
+                Padding(
+                    padding: EdgeInsets.only(
+                        top: 40, left: 10, bottom: 20, right: 15)),
+                Text(
+                  'Gautier',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
-              );
-            },
-          )
+                Spacer(),
+                Text('15',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                Spacer(),
+                Container(
+                  width: 240,
+                  height: 10,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    child: LinearProgressIndicator(
+                      backgroundColor: Color.fromARGB(255, 201, 198, 198),
+                      color: Colors.grey,
+                      value: 0.90,
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Card(
+            color: Color(0xFFEEEEEE),
+            child: Row(
+              children: [
+                Padding(
+                    padding: EdgeInsets.only(
+                        top: 40, left: 10, bottom: 20, right: 15)),
+                Text(
+                  'Alexandre',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                ),
+                Spacer(),
+                Text('10',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                Spacer(),
+                Container(
+                  width: 240,
+                  height: 10,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    child: LinearProgressIndicator(
+                      backgroundColor: Color.fromARGB(255, 201, 198, 198),
+                      color: Colors.grey,
+                      value: 0.70,
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                          Color.fromARGB(255, 41, 17, 148)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Card(
+            color: Color(0xFFEEEEEE),
+            child: Row(
+              children: [
+                Padding(
+                    padding: EdgeInsets.only(
+                        top: 40, left: 10, bottom: 20, right: 15)),
+                Text(
+                  'Bilal',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                ),
+                Spacer(),
+                Text('8',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                Spacer(),
+                Container(
+                  width: 240,
+                  height: 10,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    child: LinearProgressIndicator(
+                      backgroundColor: Color.fromARGB(255, 201, 198, 198),
+                      color: Colors.grey,
+                      value: 0.60,
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                          Color.fromARGB(255, 9, 255, 0)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
