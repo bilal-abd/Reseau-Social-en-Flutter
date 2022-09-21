@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class MyFriendList extends StatelessWidget {
+class MyFriendList extends GetView {
+  MyFriendList({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'XefiSocial',
-        theme: ThemeData(
-          primarySwatch: Colors.green,
-        ),
-        home: MyHomePage());
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
+    int _currentIndex = 0;
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Accueil',
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Amis'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.insights), label: 'Statistiques'),
+          ],
+          onTap: (index) => {}),
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Color(0xFFE0E0E0),

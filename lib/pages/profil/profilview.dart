@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 class ProfilPage extends GetView<ProfilController> {
   int selectedIndex = 0;
-
+  TextEditingController textController = TextEditingController();
   late Future<Post> futurePost;
   final ProfilController c = Get.put(ProfilController());
 
@@ -132,7 +132,7 @@ class ProfilPage extends GetView<ProfilController> {
                   child: Text('Publier'),
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 5, 72, 128))),
-              Padding(padding: EdgeInsets.only(bottom: 15)),
+              Padding(padding: EdgeInsets.zero),
               Obx(() => ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
@@ -140,19 +140,43 @@ class ProfilPage extends GetView<ProfilController> {
                     itemBuilder: (context, index) {
                       Padding(padding: EdgeInsets.only(top: 120));
                       return Card(
-                        color: Color(0xFFEEEEEE),
                         child: Column(
                           children: [
+                            Padding(
+                                padding: EdgeInsets.only(top: 15, left: 50)),
                             Row(
                               children: [
+                                Padding(padding: EdgeInsets.only(left: 5)),
                                 CircleAvatar(
-                                    radius: 20,
-                                    backgroundImage: NetworkImage(
-                                        'https://hiphopcorner.fr/wp-content/uploads/frontend/2018/11/image-tupac-amaru-shakur-blue.jpg')),
+                                    radius: 25,
+                                    backgroundImage: NetworkImage(controller
+                                        .postList[index].owner.cover_picture)),
                                 Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(controller
-                                        .postList[index].owner.first_name),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                            padding: EdgeInsets.only(left: 10)),
+                                        Text(
+                                          controller
+                                              .postList[index].owner.first_name,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Padding(
+                                            padding: EdgeInsets.only(right: 5)),
+                                        Text(
+                                          controller
+                                              .postList[index].owner.last_name,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                        padding:
+                                            EdgeInsets.only(top: 10, left: 50)),
                                     Text(controller.postList[index].created_at),
                                   ],
                                 ),
@@ -164,7 +188,61 @@ class ProfilPage extends GetView<ProfilController> {
                                     icon: Icon(Icons.more_vert))
                               ],
                             ),
+                            Padding(padding: EdgeInsets.only(top: 30)),
                             Text(controller.postList[index].text),
+                            Padding(padding: EdgeInsets.only(bottom: 20)),
+                            Card(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  TextButton.icon(
+                                    style: TextButton.styleFrom(
+                                        primary: Colors.grey),
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.thumb_up_alt_outlined,
+                                      size: 24.0,
+                                    ),
+                                    label: Text("J'aime"),
+                                  ),
+                                  TextButton.icon(
+                                    style: TextButton.styleFrom(
+                                        primary: Colors.grey),
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.chat_bubble_outline,
+                                      size: 24.0,
+                                    ),
+                                    label: Text("Commenter"),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Card(
+                              child: Row(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundImage: NetworkImage(controller
+                                        .postList[index].owner.cover_picture),
+                                    radius: 20,
+                                  ),
+                                  Flexible(
+                                      child: SizedBox(
+                                    height: 30,
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.all(15),
+                                          hintText: 'Votre commentaire... ',
+                                          hintStyle: TextStyle(
+                                              fontSize: 15, color: Colors.grey),
+                                          border: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30))),
+                                    ),
+                                  ))
+                                ],
+                              ),
+                            ),
                             Padding(padding: EdgeInsets.only(bottom: 20)),
                           ],
                         ),
@@ -172,7 +250,7 @@ class ProfilPage extends GetView<ProfilController> {
                       Padding(
                         padding: EdgeInsets.only(bottom: 120),
                       );
-                    }, 
+                    },
                   )),
             ],
           ),

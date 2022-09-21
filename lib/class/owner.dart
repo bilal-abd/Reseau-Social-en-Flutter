@@ -1,12 +1,13 @@
 class Owner {
   final int id;
-
+  final String email;
   final String first_name;
   final String last_name;
   final String profile_picture;
   final String cover_picture;
 
   Owner({
+    required this.email,
     required this.id,
     required this.first_name,
     required this.last_name,
@@ -16,6 +17,7 @@ class Owner {
 
   factory Owner.fromJson(Map<String, dynamic> json) {
     return Owner(
+      email: json['email'],
       id: json['id'],
       first_name: json['first_name'],
       last_name: json['last_name'],

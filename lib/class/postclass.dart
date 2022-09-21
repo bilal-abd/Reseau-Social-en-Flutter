@@ -20,7 +20,7 @@ class Post {
       owner_id: json['owner_id'],
       text: json['text'],
       created_at: json['created_at'],
-      owner: json['owner'],
+      owner: Owner.fromJson(json['owner']),
     );
   }
 }
