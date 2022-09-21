@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/class/postclass.dart';
-import 'package:flutter_application_1/listfriend.dart';
+import 'package:flutter_application_1/pages/friendlist/listfriendview.dart';
 import 'package:flutter_application_1/pages/profil/profilcontroller.dart';
 import 'package:get/get.dart';
 
@@ -138,19 +138,22 @@ class ProfilPage extends GetView<ProfilController> {
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: controller.postList.length,
                     itemBuilder: (context, index) {
+                      Padding(padding: EdgeInsets.only(top: 120));
                       return Card(
+                        color: Color(0xFFEEEEEE),
                         child: Column(
                           children: [
                             Row(
                               children: [
                                 CircleAvatar(
-                                  radius: 20,
-                                  backgroundColor: Colors.blue,
-                                ),
+                                    radius: 20,
+                                    backgroundImage: NetworkImage(
+                                        'https://hiphopcorner.fr/wp-content/uploads/frontend/2018/11/image-tupac-amaru-shakur-blue.jpg')),
                                 Column(
                                   children: [
-                                    Text(controller.postList[index].text),
-                                    Text("A l'instant"),
+                                    Text(controller
+                                        .postList[index].owner.first_name),
+                                    Text(controller.postList[index].created_at),
                                   ],
                                 ),
                                 Spacer(
@@ -161,12 +164,15 @@ class ProfilPage extends GetView<ProfilController> {
                                     icon: Icon(Icons.more_vert))
                               ],
                             ),
-                            Text(controller.postList[index].created_at),
-                            Padding(padding: EdgeInsets.only(bottom: 30)),
+                            Text(controller.postList[index].text),
+                            Padding(padding: EdgeInsets.only(bottom: 20)),
                           ],
                         ),
                       );
-                    },
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 120),
+                      );
+                    }, 
                   )),
             ],
           ),
