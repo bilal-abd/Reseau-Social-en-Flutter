@@ -48,7 +48,7 @@ class ProfilPage extends GetView<ProfilController> {
                       child: CircleAvatar(
                         radius: 57,
                         backgroundImage: NetworkImage(
-                            'https://hiphopcorner.fr/wp-content/uploads/frontend/2018/11/image-tupac-amaru-shakur-blue.jpg'),
+                            'https://ucreate.ch/wp-content/uploads/2022/02/profil_vide.jpg'),
                       ),
                     ),
                   )
@@ -56,7 +56,7 @@ class ProfilPage extends GetView<ProfilController> {
               ),
               Padding(padding: EdgeInsets.only(top: 20)),
               Text(
-                "2pac Shakur",
+                "Bilal Abd",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               Row(

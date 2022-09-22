@@ -11,6 +11,7 @@ class _StatsLikeState extends State<StatsLike> {
   var bool_loading;
   var double_progressValue;
 
+  int _currentIndex = 0;
   @override
   void initState() {
     super.initState();
@@ -21,6 +22,18 @@ class _StatsLikeState extends State<StatsLike> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Accueil',
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Amis'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.insights), label: 'Statistiques'),
+          ],
+          onTap: (index) => {}),
       appBar: AppBar(
           title: Center(
         child: Text('Mes Statitistiques'),

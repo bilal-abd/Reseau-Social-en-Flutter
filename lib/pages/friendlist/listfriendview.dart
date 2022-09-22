@@ -22,7 +22,7 @@ class MyFriendList extends GetView {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Color(0xFFE0E0E0),
-        title: Text("My Friends", style: TextStyle(color: Colors.black)),
+        title: Text("Mes Amis", style: TextStyle(color: Colors.black)),
       ),
       body: ListView.builder(
         shrinkWrap: true,
@@ -43,12 +43,12 @@ class MyFriendList extends GetView {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('2Pac Shakur'),
+                      Text('Alexandre Pozzi'),
                       Padding(padding: EdgeInsets.only(bottom: 6)),
                       Row(
                         children: [
                           Text(
-                            'Ami depuis',
+                            'Ami depuis 2 mois',
                             style: TextStyle(color: Colors.grey),
                           ),
                           SizedBox(
